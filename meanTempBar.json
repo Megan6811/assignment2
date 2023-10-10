@@ -1,0 +1,64 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Relationship between Temperature and CO2 Emissions in Australia",
+    "width": 1200,
+    "height": 400,
+    "data": {
+      "url": "https://raw.githubusercontent.com/Megan6811/assignment2/main/meanTempData.csv",
+      "format": { "type": "csv" }
+    },
+    "layer": [
+      {
+        "mark": "bar",
+        "encoding": {
+          "x": {
+            "field": "year",
+            "type": "ordinal",
+            "title": "Year",
+            "sort": "x",
+            "axis": {
+              "labelFlush": true, 
+              "labelPadding": 10
+            }
+          },
+          "y": {
+            "field": "mean temp deviation",
+            "type": "quantitative",
+            "title": "Mean Temperature Anomaly"
+          },
+          "color": {
+            "field": "mean temp deviation",
+            "type": "quantitative",
+            "scale": {
+              "type": "linear",
+              "range": ["yellow", "red"]
+            },
+            "legend": null  
+          }
+        }
+      },
+      {
+        "mark": "line",
+        "encoding": {
+          "x": {
+            "field": "year",
+            "type": "ordinal",
+            "title": "Year"
+          },
+          "y": {
+            "field": "emissions",
+            "type": "quantitative",
+            "title": "Kilotons of CO2"
+            
+          },
+          "color": { "value": "darkgray" }
+        }
+      }
+    ],
+    "resolve": {
+      "scale": {
+        "y": "independent"
+      }
+    }
+  }
+  
