@@ -1,6 +1,11 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Relationship between Temperature and CO2 Emissions in Australia",
+    "title": {
+        "text": "Relationship between Temperature and CO2 Emissions in Australia",
+        "fontSize": 14,  
+        "anchor": "middle",  
+        "offset": 10  
+      },
     "width": 1200,
     "height": 400,
     "data": {
