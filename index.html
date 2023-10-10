@@ -1,10 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <title>My First HTML Doc</title>
+  <title>Assignment2</title>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+  <!-- Import pure.css -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+    integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+
+
 </head>
+
 <body>
-    <h1> Heading 1</h1>
-    <p> First paragraph</p>
+
+  <div class="page">
+
+    <!-- pure grid group -->
+    <div style="text-align:center">
+      <div class="pure-u-1-1">
+        <h1>EFFECTS OF CARBON EMISSIONS ON THE AUSTRALIAN CLIMATE</h1>
+        <p>
+            Carbon emissions have led to a concerning increase in temperatures and more severe bushfire seasons in Australia. The country has witnessed a pronounced rise in average temperatures, resulting in longer and more intense heatwaves. These soaring temperatures have created a breeding ground for more frequent and devastating bushfires, with recent seasons characterized by unprecedented fire activity that has not only threatened lives and property but also inflicted irreparable damage on Australia's unique ecosystems and wildlife. The impact of these hotter and more fire-prone conditions has been deeply felt across the nation, underscoring the urgent need for climate action to address this pressing issue.
+            </p>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+    <div>
+        <div style="text-align:center">
+            <div id = topGraph class = "vis-container"></div>
+        </div>
+    </div>
+    <div class="pure-g">
+        <div class="pure-u-1-1 small-font">
+          <p>talk about top graph</p>
+        </div>
+      </div>
+        <!-- pure grid group -->
+        <div class="pure-g">
+            <div class="pure-u-2-3">
+              <div id="vis1" class="vis-container"></div>
+            </div>
+            <div class="pure-u-1-3">
+              <div class="description description-right">
+                <div id="vis2" class="vis-container"></div>
+              </div>
+            </div>
+    <!-- figure 1 -->
+    <div class="pure-g">
+      <div class="pure-u-1-1 small-font">
+        <p>talk about maps</p>
+      </div>
+    </div>
+
+
+  </div> <!-- end page -->
+
+  <script type="text/javascript">
+    var specVis1 = "https://raw.githubusercontent.com/Megan6811/assignment2/main/archivemap.json";
+    var specVis2 = "https://raw.githubusercontent.com/Megan6811/assignment2/main/2020Map.json";
+    var specVis3 = "https://raw.githubusercontent.com/Megan6811/assignment2/main/meanTempBar.json";
+
+    vegaEmbed('#vis1', specVis1, { "actions": false });
+    vegaEmbed('#vis2', specVis2, { "actions": false });
+    vegaEmbed('#topGraph', specVis3, { "actions": false});
+
+  </script>
 </body>
+
 </html>
