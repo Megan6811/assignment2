@@ -1,0 +1,38 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "url": "https://raw.githubusercontent.com/Megan6811/assignment2/main/landDamage.csv",
+      "format": {"type": "csv"}
+    },
+    "mark": "circle",
+    "encoding": {
+      "x": {
+        "field": "temp",
+        "type": "quantitative",
+        "axis": {"title": "Temperature (°C)"}
+      },
+      "y": {
+        "field": "emissions",
+        "type": "quantitative",
+        "axis": {"title": "Greenhouse Gas Emissions"}
+      },
+      "size": {
+        "field": "land damage",
+        "type": "quantitative",
+        "scale": {"type": "sqrt", "range": [10, 2000]}, 
+        "title": "Land Damage"
+      },
+      "color": {
+        "field": "land damage",
+        "type": "quantitative",
+        "scale": {
+          "domain": [0, 13], 
+          "range": ["yellow", "red"]
+        },
+        "title": "Land Damage"
+      }
+    },
+    "width": 600, 
+    "height": 400 
+  }
+  
