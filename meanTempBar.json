@@ -12,9 +12,6 @@
     "url": "https://raw.githubusercontent.com/Megan6811/assignment2/main/meanTempData.csv",
     "format": { "type": "csv" }
   },
-  "style": {
-    "background": "black"  // Set the background color to black
-  },
   "layer": [
     {
       "mark": "bar",
