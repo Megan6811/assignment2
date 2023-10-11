@@ -21,7 +21,7 @@
           "size": {
             "field": "land damage",
             "type": "quantitative",
-            "scale": { "type": "linear", "range": [1000, 5000] },
+            "scale": { "type": "linear", "range": [500, 3000] },
             "title": "Land Damage"
           },
           "color": {
@@ -63,7 +63,7 @@
       }
     ],
     "title": "Land Damage",
-    "width": 400,
-    "height": 400
+    "width": 300,
+    "height": 300
   }
   
