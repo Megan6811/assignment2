@@ -1,69 +1,80 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": {
-        "text": "Relationship Between Temperature and CO2 Emissions in Australia",
-        "fontSize": 14,  
-        "anchor": "middle",  
-        "offset": 10  
-      },
-    "width": 1200,
-    "height": 400,
-    "data": {
-      "url": "https://raw.githubusercontent.com/Megan6811/assignment2/main/meanTempData.csv",
-      "format": { "type": "csv" }
-    },
-    "layer": [
-      {
-        "mark": "bar",
-        "encoding": {
-          "x": {
-            "field": "year",
-            "type": "ordinal",
-            "title": "Year",
-            "sort": "x",
-            "axis": {
-              "labelFlush": true, 
-              "labelPadding": 10
-            }
-          },
-          "y": {
-            "field": "mean temp deviation",
-            "type": "quantitative",
-            "title": "Mean Temperature Anomaly"
-          },
-          "color": {
-            "field": "mean temp deviation",
-            "type": "quantitative",
-            "scale": {
-              "type": "linear",
-              "range": ["yellow", "red"]
-            },
-            "legend": null  
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Relationship Between Temperature and CO2 Emissions in Australia",
+    "fontSize": 14,
+    "anchor": "middle",
+    "offset": 10
+  },
+  "width": 1200,
+  "height": 400,
+  "data": {
+    "url": "https://raw.githubusercontent.com/Megan6811/assignment2/main/meanTempData.csv",
+    "format": { "type": "csv" }
+  },
+  "style": {
+    "background": "black"  // Set the background color to black
+  },
+  "layer": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal",
+          "title": "Year",
+          "sort": "x",
+          "axis": {
+            "labelFlush": true,
+            "labelPadding": 10
           }
-        }
-      },
-      {
-        "mark": "line",
-        "encoding": {
-          "x": {
-            "field": "year",
-            "type": "ordinal",
-            "title": "Year"
+        },
+        "y": {
+          "field": "mean temp deviation",
+          "type": "quantitative",
+          "title": "Mean Temperature Anomaly"
+        },
+        "color": {
+          "field": "mean temp deviation",
+          "type": "quantitative",
+          "scale": {
+            "type": "linear",
+            "range": ["yellow", "red"]
           },
-          "y": {
-            "field": "emissions",
-            "type": "quantitative",
-            "title": "Kilotons of CO2"
-            
-          },
-          "color": { "value": "darkgray" }
-        }
+          "legend": null
+        },
+        "tooltip": [
+          { "field": "year", "title": "Year" },
+          { "field": "mean temp deviation", "title": "Mean Temperature Anomaly" },
+          { "field": "emissions", "title": "Kilotons of CO2" }
+        ]
       }
-    ],
-    "resolve": {
-      "scale": {
-        "y": "independent"
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal",
+          "title": "Year"
+        },
+        "y": {
+          "field": "emissions",
+          "type": "quantitative",
+          "title": "Kilotons of CO2"
+        },
+        "color": { "value": "darkgray" },
+        "tooltip": [
+          { "field": "year", "title": "Year" },
+          { "field": "mean temp deviation", "title": "Mean Temperature Anomaly" },
+          { "field": "emissions", "title": "Kilotons of CO2" }
+        ]
       }
     }
+  ],
+  "resolve": {
+    "scale": {
+      "y": "independent"
+    }
   }
-  
+}
