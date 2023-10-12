@@ -1,33 +1,52 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Change in Forest Area Over Time",
+    "width": 800,
+    "height": 400,
     "data": {
-      "url": "https://raw.githubusercontent.com/Megan6811/assignment2/main/landDamage.csv",
+      "url": "https://raw.githubusercontent.com/Megan6811/assignment2/main/annual-change-forest-area.csv",
       "format": { "type": "csv" }
-    },
-    "mark": {
-      "type": "circle",
-      "color": "whitesmoke"
     },
     "encoding": {
       "x": {
-        "field": "temp",
-        "type": "quantitative",
-        "axis": { "title": "Temperature (°C)" }
-      },
-      "y": {
-        "field": "emissions",
-        "type": "quantitative",
-        "axis": { "title": "Greenhouse Gas Emissions" }
-      },
-      "size": {
-        "field": "land damage",
-        "type": "quantitative",
-        "scale": { "type": "linear", "range": [0, 13] },
-        "title": "Land Damage"
+        "field": "Year",
+        "type": "temporal",
+        "axis": { "title": "Year" }
       }
     },
-    "title": "Land Damage",
-    "width": 400,
-    "height": 400
+    "transform": [
+      {"calculate": "abs(datum.fires)", "as": "fires_abs"},
+      {"calculate": "abs(datum.other)", "as": "other_abs"}
+    ],
+    "layer": [
+      {
+        "mark": "area",
+        "encoding": {
+          "y": {
+            "field": "fires_abs",
+            "type": "quantitative",
+            "stack": "zero",
+            "title": "Forest Area Lost"
+          },
+          "color": {
+            "field": "fires",
+            "type": "quantitative",
+            "scale": {"range": ["red", "yellow"]},
+            "title": "Forest Area Lost"
+          }
+        }
+      },
+      {
+        "mark": "area",
+        "encoding": {
+          "y": {
+            "field": "other_abs",
+            "type": "quantitative",
+            "stack": "zero"
+          },
+          "color": { "value": "lightgray" }
+        }
+      }
+    ]
   }
   
