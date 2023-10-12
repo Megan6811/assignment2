@@ -6,7 +6,7 @@
     },
     "mark": {
       "type": "circle",
-      "color": "#ff4500"
+      "color": "whitesmoke"
     },
     "encoding": {
       "x": {
