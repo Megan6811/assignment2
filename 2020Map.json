@@ -16,7 +16,7 @@
         "anchor": "middle",
         "offset": 10
       },
-      "width": 600,
+      "width": 610,
       "height": 450,
       "projection": { "type": "mercator" },
       "layer": [
@@ -64,7 +64,7 @@
         "anchor": "middle",
         "offset": 10
       },
-      "width": 600,
+      "width": 610,
       "height": 450,
       "projection": { "type": "mercator" },
       "layer": [
