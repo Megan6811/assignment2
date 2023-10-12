@@ -36,7 +36,8 @@
             "type": "sqrt",
             "domain": [0, 12000],
             "range": ["yellow", "red"]
-          }
+          },
+          "legend": null
         },
         "size": { "value": 120 }
       }

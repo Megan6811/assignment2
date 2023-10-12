@@ -36,7 +36,6 @@
             "domain": [0, 12000],
             "range": ["yellow", "red"]
           },
-          "legend": null,
           "title": "frp"
         },
         "size": { "value": 120 }
