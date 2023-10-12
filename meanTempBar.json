@@ -1,5 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "config": {
+    "background": "lightgray" 
+  },
   "title": {
     "text": "Relationship Between Temperature and CO2 Emissions in Australia",
     "fontSize": 14,
@@ -60,7 +63,7 @@
           "type": "quantitative",
           "title": "Kilotons of CO2"
         },
-        "color": { "value": "darkgray" },
+        "color": { "value": "black" },
         "tooltip": [
           { "field": "year", "title": "Year" },
           { "field": "mean temp deviation", "title": "Mean Temperature Anomaly" },

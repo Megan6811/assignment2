@@ -1,5 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "config": {
+    "background": "lightgray"  
+  },
   "width": 600,
   "height": 450,
   "title": {
@@ -34,7 +37,7 @@
             "range": ["yellow", "red"]
           },
           "legend": null,
-          "title": "frp" 
+          "title": "frp"
         },
         "size": { "value": 120 }
       }
