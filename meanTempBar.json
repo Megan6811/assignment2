@@ -44,7 +44,7 @@
           { "field": "year", "title": "Year" },
           { "field": "mean temp deviation", "title": "Mean Temperature Anomaly" },
           { "field": "emissions", "title": "Kilotons of CO2" }
-        }
+        ]
       }
     },
     {
@@ -65,20 +65,13 @@
           { "field": "year", "title": "Year" },
           { "field": "mean temp deviation", "title": "Mean Temperature Anomaly" },
           { "field": "emissions", "title": "Kilotons of CO2" }
-        }
+        ]
       }
     }
   ],
   "resolve": {
     "scale": {
       "y": "independent"
-    }
-  },
-  "selection": {
-    "dataSelection": {
-      "type": "multi",
-      "fields": ["emissions", "mean temp deviation"],
-      "bind": "legend"
     }
   }
 }
