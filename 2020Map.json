@@ -1,45 +1,99 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "config": {
-    "background": "whitesmoke"  
+    "background": "whitesmoke"
   },
-  "width": 600,
-  "height": 450,
   "title": {
-    "text": "2020",
+    "text": "Fire Radiative Power",
     "fontSize": 14,
-    "anchor": "middle",
-    "offset": 10
+    "anchor": "middle"
   },
-  "projection": { "type": "mercator" },
-  "layer": [
+  "hconcat": [
     {
-      "data": {
-        "url": "https://raw.githubusercontent.com/Megan6811/assignment2/main/thisistheLASTTIMEITRYTHIS.topojson",
-        "format": { "type": "topojson", "feature": "ne_110m_admin_0_countries" }
+      "title": {
+        "text": "2002",
+        "fontSize": 10, 
+        "anchor": "middle",
+        "offset": 10
       },
-      "mark": { "type": "geoshape", "fill": "darkgray", "stroke": "black" }
+      "width": 600,
+      "height": 450,
+      "projection": { "type": "mercator" },
+      "layer": [
+        {
+          "data": {
+            "url": "https://raw.githubusercontent.com/Megan6811/assignment2/main/thisistheLASTTIMEITRYTHIS.topojson",
+            "format": { "type": "topojson", "feature": "ne_110m_admin_0_countries" }
+          },
+          "mark": { "type": "geoshape", "fill": "darkgray", "stroke": "black" }
+        },
+        {
+          "data": {
+            "url": "https://raw.githubusercontent.com/Megan6811/assignment2/main/fireData2002.csv"
+          },
+          "mark": { "type": "circle" },
+          "encoding": {
+            "longitude": { "field": "longitude", "type": "quantitative" },
+            "latitude": { "field": "latitude", "type": "quantitative" },
+            "color": {
+              "field": "frp",
+              "type": "quantitative",
+              "title": "frp",
+              "scale": {
+                "type": "sqrt",
+                "domain": [0, 12000],
+                "range": ["yellow", "red"]
+              },
+              "legend": {
+                "title": "frp", 
+                "labelFontSize": 10
+              }
+            },
+            "size": { "value": 120 }
+          }
+        }
+      ]
     },
     {
-      "data": {
-        "url": "https://raw.githubusercontent.com/Megan6811/assignment2/main/actualFireData.csv"
+      "title": {
+        "text": "2020",
+        "fontSize": 10, 
+        "anchor": "middle",
+        "offset": 10
       },
-      "mark": { "type": "circle" },
-      "encoding": {
-        "longitude": { "field": "longitude", "type": "quantitative" },
-        "latitude": { "field": "latitude", "type": "quantitative" },
-        "color": {
-          "field": "frp",
-          "type": "quantitative",
-          "scale": {
-            "type": "sqrt",
-            "domain": [0, 12000],
-            "range": ["yellow", "red"]
+      "width": 600,
+      "height": 450,
+      "projection": { "type": "mercator" },
+      "layer": [
+        {
+          "data": {
+            "url": "https://raw.githubusercontent.com/Megan6811/assignment2/main/thisistheLASTTIMEITRYTHIS.topojson",
+            "format": { "type": "topojson", "feature": "ne_110m_admin_0_countries" }
           },
-          "title": "frp"
+          "mark": { "type": "geoshape", "fill": "darkgray", "stroke": "black" }
         },
-        "size": { "value": 120 }
-      }
+        {
+          "data": {
+            "url": "https://raw.githubusercontent.com/Megan6811/assignment2/main/actualFireData.csv"
+          },
+          "mark": { "type": "circle" },
+          "encoding": {
+            "longitude": { "field": "longitude", "type": "quantitative" },
+            "latitude": { "field": "latitude", "type": "quantitative" },
+            "color": {
+              "field": "frp",
+              "type": "quantitative",
+              "scale": {
+                "type": "sqrt",
+                "domain": [0, 12000],
+                "range": ["yellow", "red"]
+              },
+              "title": "frp"
+            },
+            "size": { "value": 120 }
+          }
+        }
+      ]
     }
   ]
 }

@@ -101,16 +101,11 @@
         <div id="topGraph" class="vis-container"></div>
       </div>
     </div>
-    <div class="centered-vis-container">
-      <div class="pure-u-1-2">
-        <div id="vis1" class="vis-container"></div>
-      </div>
-      <div class="pure-u-1-2">
-        <div class="description description-right">
+    <div>
+        <div style="text-align:center">
           <div id="vis2" class="vis-container"></div>
         </div>
       </div>
-    </div>
     <!-- figure 1 -->
     <div class="pure-g">
       <div class="pure-u-1-1 small-font">
@@ -135,15 +130,12 @@
   </div>
 
   <script type="text/javascript">
-    var specVis1 = "https://raw.githubusercontent.com/Megan6811/assignment2/main/archivemap.json";
     var specVis2 = "https://raw.githubusercontent.com/Megan6811/assignment2/main/2020Map.json";
     var specVis3 = "https://raw.githubusercontent.com/Megan6811/assignment2/main/meanTempBar.json";
 
-    vegaEmbed('#vis1', specVis1, { "actions": false });
     vegaEmbed('#vis2', specVis2, { "actions": false });
     vegaEmbed('#topGraph', specVis3, { "actions": false });
     vegaEmbed('#bubblePlot', "https://raw.githubusercontent.com/Megan6811/assignment2/main/bubblePlot.json", { "actions": false });
-    // Add code to embed the stacked line chart here.
     vegaEmbed('#stackedChart', "https://raw.githubusercontent.com/Megan6811/assignment2/main/stackedLine.json", { "actions": false });
   </script>
 </body>
