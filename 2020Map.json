@@ -4,8 +4,8 @@
     "background": "black"
   },
   "title": {
-    "text": "Fire Radiative Power",
-    "fontSize": 14,
+    "text": "Measure of Fire Radiative Power in Australia",
+    "fontSize": 20,
     "anchor": "middle",
     "color": "whitesmoke"
   },
@@ -13,9 +13,9 @@
     {
       "title": {
         "text": "2002",
-        "fontSize": 10,
+        "fontSize": 15,
         "anchor": "middle",
-        "offset": 10,
+        "offset": 15,
         "color": "whitesmoke"
       },
       "width": 610,

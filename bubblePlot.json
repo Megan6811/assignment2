@@ -1,69 +1,126 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "data": {
-      "url": "https://raw.githubusercontent.com/Megan6811/assignment2/main/landDamage.csv",
-      "format": { "type": "csv" }
-    },
-    "layer": [
-      {
-        "mark": "circle",
-        "encoding": {
-          "x": {
-            "field": "temp",
-            "type": "quantitative",
-            "axis": { "title": "Temperature (°C)" }
-          },
-          "y": {
-            "field": "emissions",
-            "type": "quantitative",
-            "axis": { "title": "Greenhouse Gas Emissions" }
-          },
-          "size": {
-            "field": "land damage",
-            "type": "quantitative",
-            "scale": { "type": "linear", "range": [500, 3000] },
-            "title": "Land Damage"
-          },
-          "color": {
-            "field": "land damage",
-            "type": "quantitative",
-            "scale": { "type": "linear", "range": ["yellow", "red"] },
-            "title": "Land Damage"
-          },
-          "tooltip": [
-            { "field": "state", "title": "State" },
-            { "field": "temp", "title": "Temp Deviation" },
-            { "field": "emissions", "title": "Emissions" },
-            { "field": "land damage", "title": "Land Damage" }
-          ]
-        }
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Bushfire Effect on Land",
+    "fontSize": 20,
+    "color": "whitesmoke"
+  },
+  "background": "black", 
+  "vconcat": [
+    {
+      "title": {"text":"Correlation between Climate and Bushfire Damage", "color": "whitesmoke"},
+      "width": 600,
+      "height": 300,
+      "data": {
+        "url": "https://raw.githubusercontent.com/Megan6811/assignment2/main/landDamage.csv",
+        "format": { "type": "csv" }
       },
-      {
-        "mark": {
-          "type": "text",
-          "align": "center",
-          "baseline": "middle"
+      "layer": [
+        {
+          "mark": "circle",
+          "encoding": {
+            "x": {
+              "field": "temp",
+              "type": "quantitative",
+              "axis": { "title": "Temperature (°C)", "labelColor": "whitesmoke", "titleColor": "whitesmoke" }
+            },
+            "y": {
+              "field": "emissions",
+              "type": "quantitative",
+              "axis": { "title": "Greenhouse Gas Emissions", "labelColor": "whitesmoke", "titleColor": "whitesmoke" }
+            },
+            "size": {
+              "field": "land damage",
+              "type": "quantitative",
+              "scale": { "type": "linear", "range": [100, 4000] },
+              "title": "Land Damage"
+            },
+            "color": {
+              "field": "land damage",
+              "type": "quantitative",
+              "scale": { "range": ["yellow", "red"] },
+              "title": "Land Damage",
+              "legend": {"titleColor": "whitesmoke", "labelColor": "whitesmoke" }
+            },
+            "tooltip": [
+              { "field": "state", "title": "State" },
+              { "field": "temp", "title": "Temp Deviation" },
+              { "field": "emissions", "title": "Emissions" },
+              { "field": "land damage", "title": "Land Damage" }
+            ]
+          }
         },
-        "encoding": {
-          "x": {
-            "field": "temp",
-            "type": "quantitative"
+        {
+          "mark": {
+            "type": "text",
+            "align": "center",
+            "baseline": "middle"
           },
-          "y": {
-            "field": "emissions",
-            "type": "quantitative"
-          },
-          "text": {
-            "field": "state"
-          },
-          "color": {
-            "value": "black"
+          "encoding": {
+            "x": {
+              "field": "temp",
+              "type": "quantitative"
+            },
+            "y": {
+              "field": "emissions",
+              "type": "quantitative"
+            },
+            "text": {
+              "field": "state"
+            },
+            "color": {
+              "value": "whitesmoke"
+            }
           }
         }
-      }
-    ],
-    "title": "Land Damage",
-    "width": 300,
-    "height": 300
-  }
-  
+      ]
+    },
+    {
+      "title": {"text": "Change in Forest Area Over Time", "color": "whitesmoke"},
+      "width": 610,
+      "height": 400,
+      "data": {
+        "url": "https://raw.githubusercontent.com/Megan6811/assignment2/main/annual-change-forest-area.csv",
+        "format": { "type": "csv" }
+      },
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal",
+          "axis": { "title": "Year", "labelColor": "whitesmoke", "titleColor": "whitesmoke" }
+        }
+      },
+      "transform": [
+        {"calculate": "abs(datum.fires)", "as": "fires_abs"},
+        {"calculate": "abs(datum.other)", "as": "other_abs"}
+      ],
+      "layer": [
+        {
+          "mark": "area",
+          "encoding": {
+            "y": {
+              "field": "fires_abs",
+              "type": "quantitative",
+              "stack": "zero",
+              "axis": { "title": "Land Area Lost", "labelColor": "whitesmoke", "titleColor": "whitesmoke" }
+            },
+            "color": {
+              "value": "darkorange"
+            }
+          }
+        },
+        {
+          "mark": "area",
+          "encoding": {
+            "y": {
+              "field": "other_abs",
+              "type": "quantitative",
+              "stack": "zero"
+            },
+            "color": { "value": "lightgray" }
+          }
+        }
+      ]
+    }
+  ]
+}
