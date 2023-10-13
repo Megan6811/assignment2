@@ -1,12 +1,13 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "config": {
-    "background": "whitesmoke"
+    "background": "black"
   },
   "title": {
     "text": "Fire Radiative Power",
     "fontSize": 14,
-    "anchor": "middle"
+    "anchor": "middle",
+    "color": "whitesmoke"
   },
   "hconcat": [
     {
@@ -14,7 +15,8 @@
         "text": "2002",
         "fontSize": 10,
         "anchor": "middle",
-        "offset": 10
+        "offset": 10,
+        "color": "whitesmoke"
       },
       "width": 610,
       "height": 450,
@@ -25,7 +27,7 @@
             "url": "https://raw.githubusercontent.com/Megan6811/assignment2/main/thisistheLASTTIMEITRYTHIS.topojson",
             "format": { "type": "topojson", "feature": "ne_110m_admin_0_countries" }
           },
-          "mark": { "type": "geoshape", "fill": "darkgray", "stroke": "black" }
+          "mark": { "type": "geoshape", "fill": "darkgray", "stroke": "whitesmoke" }
         },
         {
           "data": {
@@ -49,7 +51,9 @@
               },
               "legend": {
                 "title": "FRP",
-                "labelFontSize": 10
+                "labelFontSize": 10,
+                "titleColor": "whitesmoke",
+                "labelColor": "whitesmoke"
               }
             },
             "size": { "value": 120 }
@@ -62,7 +66,8 @@
         "text": "2020",
         "fontSize": 10,
         "anchor": "middle",
-        "offset": 10
+        "offset": 10,
+        "color": "whitesmoke"
       },
       "width": 610,
       "height": 450,
