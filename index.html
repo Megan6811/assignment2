@@ -24,8 +24,8 @@
   <style>
     body {
       overflow-x: hidden;
-      background-color: lightgray;
-      color: black;
+      background-color: black;
+      color: whitesmoke;
     }
 
     .page {
@@ -96,6 +96,13 @@
       </div>
     </div>
     <!-- end pure grid group -->
+        <!-- Placeholder for "topGraph" visualization -->
+    <div style="text-align:center">
+      <div id="topGraph" class="vis-container"></div>
+    </div>
+    <div style="text-align:center">
+      <p> Talk about the top graph, talk about maps</p>
+    </div>
     <div>
       <div style="text-align:center">
         <div id="vis2" class="vis-container"></div>
@@ -104,14 +111,11 @@
 
     <!-- Add the image below the "vis2" div, taking up the maximum width of the page -->
     <div style="text-align:center">
-      <img src="https://github.com/Megan6811/assignment2/blob/28f5282607c4f1b07ace19f775254f743b079e1b/wildfire.jpg"
+      <img src="https://cdn.vox-cdn.com/thumbor/Cdw6qktAfg_GJPhUqJORBZMLqRk=/0x0:4000x2667/1200x675/filters:focal(2078x283:2718x923)/cdn.vox-cdn.com/uploads/chorus_image/image/66063681/GettyImages_1197451354.0.jpg"
         alt="Wildfire Image" style="max-width: 100%; height: auto;">
     </div>
 
-    <!-- Placeholder for "topGraph" visualization -->
-    <div style="text-align:center">
-      <div id="topGraph" class="vis-container"></div>
-    </div>
+
     <!-- figure 1 -->
     <div class="pure-g">
       <div class="pure-u-1-1 small-font">
@@ -140,7 +144,7 @@
     var specVis3 = "https://raw.githubusercontent.com/Megan6811/assignment2/main/meanTempBar.json";
 
     // Embed "topGraph" visualization - Replace with the correct URL and specification
-    vegaEmbed('#topGraph', { /* Your "topGraph" specification here */ }, { "actions": false });
+    vegaEmbed('#topGraph', "https://raw.githubusercontent.com/Megan6811/assignment2/main/meanTempBar.json", { "actions": false });
 
     // Embed other visualizations
     vegaEmbed('#vis2', specVis2, { "actions": false });
