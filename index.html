@@ -98,14 +98,20 @@
     <!-- end pure grid group -->
     <div>
       <div style="text-align:center">
-        <div id="topGraph" class="vis-container"></div>
+        <div id="vis2" class="vis-container"></div>
       </div>
     </div>
-    <div>
-        <div style="text-align:center">
-          <div id="vis2" class="vis-container"></div>
-        </div>
-      </div>
+
+    <!-- Add the image below the "vis2" div, taking up the maximum width of the page -->
+    <div style="text-align:center">
+      <img src="https://github.com/Megan6811/assignment2/blob/28f5282607c4f1b07ace19f775254f743b079e1b/wildfire.jpg"
+        alt="Wildfire Image" style="max-width: 100%; height: auto;">
+    </div>
+
+    <!-- Placeholder for "topGraph" visualization -->
+    <div style="text-align:center">
+      <div id="topGraph" class="vis-container"></div>
+    </div>
     <!-- figure 1 -->
     <div class="pure-g">
       <div class="pure-u-1-1 small-font">
@@ -133,8 +139,11 @@
     var specVis2 = "https://raw.githubusercontent.com/Megan6811/assignment2/main/2020Map.json";
     var specVis3 = "https://raw.githubusercontent.com/Megan6811/assignment2/main/meanTempBar.json";
 
+    // Embed "topGraph" visualization - Replace with the correct URL and specification
+    vegaEmbed('#topGraph', { /* Your "topGraph" specification here */ }, { "actions": false });
+
+    // Embed other visualizations
     vegaEmbed('#vis2', specVis2, { "actions": false });
-    vegaEmbed('#topGraph', specVis3, { "actions": false });
     vegaEmbed('#bubblePlot', "https://raw.githubusercontent.com/Megan6811/assignment2/main/bubblePlot.json", { "actions": false });
     vegaEmbed('#stackedChart', "https://raw.githubusercontent.com/Megan6811/assignment2/main/stackedLine.json", { "actions": false });
   </script>
