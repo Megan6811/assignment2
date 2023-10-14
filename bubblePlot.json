@@ -2,15 +2,60 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Bushfire Effect on Land",
-    "fontSize": 20,
+    "fontSize": 50,
     "color": "whitesmoke"
   },
-  "background": "black", 
-  "vconcat": [
+  "background": "black",
+  "hconcat": [
     {
-      "title": {"text":"Correlation between Climate and Bushfire Damage", "color": "whitesmoke"},
+      "title": { "text": "Change in Forest Area Over Time", "color": "whitesmoke", "fontSize": 20 },
       "width": 600,
-      "height": 300,
+      "height": 400,
+      "data": {
+        "url": "https://raw.githubusercontent.com/Megan6811/assignment2/main/annual-change-forest-area.csv",
+        "format": { "type": "csv" }
+      },
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal",
+          "axis": { "title": "Year", "labelColor": "whitesmoke", "titleColor": "whitesmoke" }
+        }
+      },
+      "transform": [
+        { "calculate": "abs(datum.fires)", "as": "fires_abs" },
+        { "calculate": "abs(datum.other)", "as": "other_abs" }
+      ],
+      "layer": [
+        {
+          "mark": "area",
+          "encoding": {
+            "y": {
+              "field": "fires_abs",
+              "type": "quantitative",
+              "stack": "zero",
+              "axis": { "title": "Land Area Lost", "labelColor": "whitesmoke", "titleColor": "whitesmoke" }
+            },
+            "color": { "value": "chocolate" }
+          }
+        },
+        {
+          "mark": "area",
+          "encoding": {
+            "y": {
+              "field": "other_abs",
+              "type": "quantitative",
+              "stack": "zero"
+            },
+            "color": { "value": "lightgray" }
+          }
+        }
+      ]
+    },
+    {
+      "title": { "text": "Correlation between Climate and Bushfire Damage", "color": "whitesmoke", "fontSize": 20 },
+      "width": 400,
+      "height": 400,
       "data": {
         "url": "https://raw.githubusercontent.com/Megan6811/assignment2/main/landDamage.csv",
         "format": { "type": "csv" }
@@ -32,7 +77,7 @@
             "size": {
               "field": "land damage",
               "type": "quantitative",
-              "scale": { "type": "linear", "range": [100, 4000] },
+              "scale": { "type": "linear", "range": [500, 6000] },
               "title": "Land Damage"
             },
             "color": {
@@ -40,7 +85,7 @@
               "type": "quantitative",
               "scale": { "range": ["yellow", "red"] },
               "title": "Land Damage",
-              "legend": {"titleColor": "whitesmoke", "labelColor": "whitesmoke" }
+              "legend": { "titleColor": "whitesmoke", "labelColor": "whitesmoke" }
             },
             "tooltip": [
               { "field": "state", "title": "State" },
@@ -71,53 +116,6 @@
             "color": {
               "value": "whitesmoke"
             }
-          }
-        }
-      ]
-    },
-    {
-      "title": {"text": "Change in Forest Area Over Time", "color": "whitesmoke"},
-      "width": 610,
-      "height": 400,
-      "data": {
-        "url": "https://raw.githubusercontent.com/Megan6811/assignment2/main/annual-change-forest-area.csv",
-        "format": { "type": "csv" }
-      },
-      "encoding": {
-        "x": {
-          "field": "Year",
-          "type": "temporal",
-          "axis": { "title": "Year", "labelColor": "whitesmoke", "titleColor": "whitesmoke" }
-        }
-      },
-      "transform": [
-        {"calculate": "abs(datum.fires)", "as": "fires_abs"},
-        {"calculate": "abs(datum.other)", "as": "other_abs"}
-      ],
-      "layer": [
-        {
-          "mark": "area",
-          "encoding": {
-            "y": {
-              "field": "fires_abs",
-              "type": "quantitative",
-              "stack": "zero",
-              "axis": { "title": "Land Area Lost", "labelColor": "whitesmoke", "titleColor": "whitesmoke" }
-            },
-            "color": {
-              "value": "darkorange"
-            }
-          }
-        },
-        {
-          "mark": "area",
-          "encoding": {
-            "y": {
-              "field": "other_abs",
-              "type": "quantitative",
-              "stack": "zero"
-            },
-            "color": { "value": "lightgray" }
           }
         }
       ]
