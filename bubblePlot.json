@@ -1,14 +1,14 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "Bushfire Effect on Land",
+    "text": "Bushfire Effect on Land:",
     "fontSize": 50,
     "color": "whitesmoke"
   },
   "background": "black",
   "hconcat": [
     {
-      "title": { "text": "Change in Forest Area Over Time", "color": "whitesmoke", "fontSize": 20 },
+      "title": { "text": "Change in Forest Area Over Time", "color": "whitesmoke", "fontSize": 30 },
       "width": 600,
       "height": 400,
       "data": {
@@ -53,7 +53,7 @@
       ]
     },
     {
-      "title": { "text": "Correlation between Climate and Bushfire Damage", "color": "whitesmoke", "fontSize": 20 },
+      "title": { "text": "Correlation between Climate and Bushfire Damage", "color": "whitesmoke", "fontSize": 30 },
       "width": 400,
       "height": 400,
       "data": {

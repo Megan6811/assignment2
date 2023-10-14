@@ -4,7 +4,7 @@
     "background": "black",
     "axis": {
       "labelColor": "whitesmoke",
-      "titleColor": "whitesmoke" 
+      "titleColor": "whitesmoke"
     }
   },
   "title": {
@@ -18,7 +18,9 @@
   "height": 400,
   "data": {
     "url": "https://raw.githubusercontent.com/Megan6811/assignment2/main/meanTempData.csv",
-    "format": { "type": "csv" }
+    "format": {
+      "type": "csv"
+    }
   },
   "layer": [
     {
@@ -28,12 +30,12 @@
           "field": "year",
           "type": "ordinal",
           "title": "Year",
-          "sort": "x",
+          "sort": "ascending",
           "axis": {
             "labelFlush": true,
             "labelPadding": 10,
-            "labelColor": "whitesmoke", 
-            "tickColor": "whitesmoke" 
+            "labelColor": "whitesmoke",
+            "tickColor": "whitesmoke"
           }
         },
         "y": {
@@ -49,12 +51,7 @@
             "range": ["yellow", "red"]
           },
           "legend": null
-        },
-        "tooltip": [
-          { "field": "year", "title": "Year" },
-          { "field": "mean temp deviation", "title": "Mean Temperature Anomaly" },
-          { "field": "emissions", "title": "Kilotons of CO2" }
-        ]
+        }
       }
     },
     {
@@ -65,8 +62,8 @@
           "type": "ordinal",
           "title": "Year",
           "axis": {
-            "labelColor": "whitesmoke", 
-            "tickColor": "whitesmoke" 
+            "labelColor": "whitesmoke",
+            "tickColor": "whitesmoke"
           }
         },
         "y": {
@@ -79,13 +76,8 @@
           { "field": "year", "title": "Year" },
           { "field": "mean temp deviation", "title": "Mean Temperature Anomaly" },
           { "field": "emissions", "title": "Kilotons of CO2" }
-        ]
+        }
       }
     }
-  ],
-  "resolve": {
-    "scale": {
-      "y": "independent"
-    }
-  }
+  ]
 }

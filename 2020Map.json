@@ -5,7 +5,7 @@
   },
   "title": {
     "text": "Measure of Fire Radiative Power in Australia",
-    "fontSize": 20,
+    "fontSize": 30,
     "anchor": "middle",
     "color": "whitesmoke"
   },
@@ -24,10 +24,10 @@
       "layer": [
         {
           "data": {
-            "url": "https://raw.githubusercontent.com/Megan6811/assignment2/main/thisistheLASTTIMEITRYTHIS.topojson",
-            "format": { "type": "topojson", "feature": "ne_110m_admin_0_countries" }
+            "url": "https://raw.githubusercontent.com/Megan6811/assignment2/main/finalMap.topojson",
+            "format": { "type": "topojson", "feature": "ausMap"}
           },
-          "mark": { "type": "geoshape", "fill": "darkgray", "stroke": "whitesmoke" }
+          "mark": { "type": "geoshape", "fill": "darkgray", "stroke": "lavenderblush" }
         },
         {
           "data": {
@@ -75,10 +75,10 @@
       "layer": [
         {
           "data": {
-            "url": "https://raw.githubusercontent.com/Megan6811/assignment2/main/thisistheLASTTIMEITRYTHIS.topojson",
-            "format": { "type": "topojson", "feature": "ne_110m_admin_0_countries" }
+            "url": "https://raw.githubusercontent.com/Megan6811/assignment2/main/finalMap.topojson",
+            "format": { "type": "topojson", "feature": "ausMap" }
           },
-          "mark": { "type": "geoshape", "fill": "darkgray", "stroke": "black" }
+          "mark": { "type": "geoshape", "fill": "darkgray", "stroke": "lavenderblush" }
         },
         {
           "data": {
