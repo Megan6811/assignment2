@@ -1,0 +1,16 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "url": "https://raw.githubusercontent.com/Megan6811/assignment2/main/animals.csv"
+    },
+    "mark": "arc",
+    "encoding": {
+      "theta": {"field": "deaths", "type": "quantitative"},
+      "color": {"title": "Animal:", "field": "animal", "type": "nominal", "scale": {"range": ["darkred", "chocolate", "goldenrod", "olive"]}},
+      "tooltip": [
+        {"field": "animal", "type": "nominal"},
+        {"field": "deaths", "type": "quantitative"}
+      ]
+    },
+    "title": {"text": "Animal Deaths in 2020", "fontSize": 30}
+  }  
