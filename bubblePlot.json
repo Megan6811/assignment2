@@ -34,9 +34,13 @@
               "field": "fires_abs",
               "type": "quantitative",
               "stack": "zero",
-              "axis": { "title": "Land Area Lost", "labelColor": "whitesmoke", "titleColor": "whitesmoke" }
+              "axis": { "title": "Land Area Lost (km^2)", "labelColor": "whitesmoke", "titleColor": "whitesmoke" }
             },
-            "color": { "value": "chocolate" }
+            "color": { "value": "chocolate" },
+            "tooltip": [
+              { "field": "fires_abs", "title": "Fire Land Damage (km^2)" },
+              { "field": "other_abs", "title": "Other Land Damage (km^2)" }
+            ]
           }
         },
         {
@@ -67,17 +71,19 @@
             "x": {
               "field": "temp",
               "type": "quantitative",
-              "axis": { "title": "Temperature (°C)", "labelColor": "whitesmoke", "titleColor": "whitesmoke" }
+              "axis": { "title": "Temperature (°C)", "labelColor": "whitesmoke", "titleColor": "whitesmoke" },
+              "scale": {"domain": [0, 1.5]}
             },
             "y": {
               "field": "emissions",
               "type": "quantitative",
-              "axis": { "title": "Greenhouse Gas Emissions", "labelColor": "whitesmoke", "titleColor": "whitesmoke" }
+              "axis": { "title": "Greenhouse Gas Emissions", "labelColor": "whitesmoke", "titleColor": "whitesmoke" },
+              "scale": { "domain": [-20, 180] }
             },
             "size": {
               "field": "land damage",
               "type": "quantitative",
-              "scale": { "type": "linear", "range": [500, 6000] },
+              "scale": { "range": [500, 6000] },
               "title": "Land Damage"
             },
             "color": {
