@@ -51,7 +51,7 @@
               "type": "quantitative",
               "stack": "zero"
             },
-            "color": { "value": "lightgray" }
+            "color": { "value": "olive" }
           }
         }
       ]
