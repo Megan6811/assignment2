@@ -18,9 +18,7 @@
   "height": 400,
   "data": {
     "url": "https://raw.githubusercontent.com/Megan6811/assignment2/main/meanTempData.csv",
-    "format": {
-      "type": "csv"
-    }
+    "format": { "type": "csv" }
   },
   "layer": [
     {
@@ -30,7 +28,7 @@
           "field": "year",
           "type": "ordinal",
           "title": "Year",
-          "sort": "ascending",
+          "sort": "x",
           "axis": {
             "labelFlush": true,
             "labelPadding": 10,
@@ -51,7 +49,12 @@
             "range": ["yellow", "red"]
           },
           "legend": null
-        }
+        },
+        "tooltip": [
+          { "field": "year", "title": "Year" },
+          { "field": "mean temp deviation", "title": "Mean Temperature Anomaly" },
+          { "field": "emissions", "title": "Kilotons of CO2" }
+        ]
       }
     },
     {
@@ -76,8 +79,13 @@
           { "field": "year", "title": "Year" },
           { "field": "mean temp deviation", "title": "Mean Temperature Anomaly" },
           { "field": "emissions", "title": "Kilotons of CO2" }
-        }
+        ]
       }
     }
-  ]
+  ],
+  "resolve": {
+    "scale": {
+      "y": "independent"
+    }
+  }
 }
