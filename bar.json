@@ -1,0 +1,23 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "url": "https://raw.githubusercontent.com/Megan6811/assignment2/main/humans.csv"
+    },
+    "mark": "bar",
+    "encoding": {
+      "x": {"field": "State", "type": "nominal", "title": "State"},
+      "y": {"field": "value", "type": "quantitative", "title": "Count"},
+      "color": {
+        "field": "Type",
+        "type": "nominal",
+        "scale": {"range": ["red", "green"]},
+        "legend": {"title": "Category"}
+      },
+      "column": {
+        "field": "Type",
+        "title": "Category"
+      }
+    },
+    "title": "Fatalities and Homes Lost by State"
+  }
+  
