@@ -26,7 +26,7 @@
             "type": "quantitative",
             "title": "Homes Lost"
           },
-          "color": {"value": "chocolate"}
+          "color": {"value": "darkred"}
         }
       },
       {
@@ -40,12 +40,12 @@
             "type": "quantitative",
             "title": "Fatalities"
           },
-          "color": {"value": "chocolate"}
+          "color": {"value": "goldenrod"}
         }
       }
     ],
     "title": {
-      "text": "Bushfire Effects on Humans:",
+      "text": "Bushfire Effects on Humans & Animals:",
       "color": "whitesmoke"
     }
   }  
