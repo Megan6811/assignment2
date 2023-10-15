@@ -1,51 +1,59 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "background": "black",
-    "config": {
-      "title": {
-        "color": "whitesmoke",
-        "fontSize": 50
-      },
-      "axis": {
-        "labelColor": "whitesmoke",
-        "titleColor": "whitesmoke"
-      }
-    },
-    "data": {
-      "url": "https://raw.githubusercontent.com/Megan6811/assignment2/main/humans.csv"
-    },
-    "hconcat": [
-      {
-        "width": 300,
-        "height": 400,
-        "mark": "bar",
-        "encoding": {
-          "x": {"field": "State", "title": null},
-          "y": {
-            "field": "Homes Lost",
-            "type": "quantitative",
-            "title": "Homes Lost"
-          },
-          "color": {"value": "darkred"}
-        }
-      },
-      {
-        "width": 300,
-        "height": 400,
-        "mark": "bar",
-        "encoding": {
-          "x": {"field": "State", "title": null},
-          "y": {
-            "field": "Fatalities",
-            "type": "quantitative",
-            "title": "Fatalities"
-          },
-          "color": {"value": "goldenrod"}
-        }
-      }
-    ],
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "black",
+  "config": {
     "title": {
-      "text": "Effects on Humans & Animals:",
-      "color": "whitesmoke"
+      "color": "whitesmoke",
+      "fontSize": 50
+    },
+    "axis": {
+      "labelColor": "whitesmoke",
+      "titleColor": "whitesmoke"
     }
-  }  
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/Megan6811/assignment2/main/humans.csv"
+  },
+  "hconcat": [
+    {
+      "width": 300,
+      "height": 400,
+      "mark": "bar",
+      "encoding": {
+        "x": {"field": "State", "title": null},
+        "y": {
+          "field": "Homes Lost",
+          "type": "quantitative",
+          "title": "Homes Lost"
+        },
+        "color": {"value": "darkred"},
+        "tooltip": [
+          {"field": "State", "type": "ordinal", "title": "State"},
+          {"field": "Homes Lost", "type": "quantitative", "title": "Homes Lost"}
+        ]
+      }
+    },
+    {
+      "width": 300,
+      "height": 400,
+      "mark": "bar",
+      "encoding": {
+        "x": {"field": "State", "title": null},
+        "y": {
+          "field": "Fatalities",
+          "type": "quantitative",
+          "title": "Fatalities"
+        },
+        "color": {"value": "goldenrod"},
+        "tooltip": [
+          {"field": "State", "type": "ordinal", "title": "State"},
+          {"field": "Fatalities", "type": "quantitative", "title": "Fatalities"}
+        ]
+      }
+    }
+  ],
+  "title": {
+    "text": "Effects on Humans & Animals:",
+    "color": "whitesmoke"
+  }
+}
