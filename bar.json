@@ -1,25 +1,51 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "background": "black",
+    "config": {
+      "title": {
+        "color": "whitesmoke",
+        "fontSize": "50"
+      },
+      "axis": {
+        "labelColor": "whitesmoke",
+        "titleColor": "whitesmoke"
+      }
+    },
     "data": {
       "url": "https://raw.githubusercontent.com/Megan6811/assignment2/main/humans.csv"
     },
-    "layer": [
+    "hconcat": [
       {
+        "width": 300,
+        "height": 400,
         "mark": "bar",
         "encoding": {
-          "x": {"field": "State"},
-          "y": {"field": "Value", "type": "quantitative", "scale": {"domain": [0, 2500]}, "title": "Homes Lost"},
-          "color": {"value": "green"}
+          "x": {"field": "State", "title": null},
+          "y": {
+            "field": "Homes Lost",
+            "type": "quantitative",
+            "title": "Homes Lost"
+          },
+          "color": {"value": "chocolate"}
         }
       },
       {
+        "width": 300,
+        "height": 400,
         "mark": "bar",
         "encoding": {
-          "x": {"field": "State"},
-          "y": {"field": "Value", "type": "quantitative", "scale": {"domain": [0, 500]}, "title": "Fatalities"},
-          "color": {"value": "red"}
+          "x": {"field": "State", "title": null},
+          "y": {
+            "field": "Fatalities",
+            "type": "quantitative",
+            "title": "Fatalities"
+          },
+          "color": {"value": "chocolate"}
         }
       }
     ],
-    "title": "Grouped Bar Chart for Fatalities and Homes Lost by State"
+    "title": {
+      "text": "Bushfire Effects on Humans:",
+      "color": "whitesmoke"
+    }
   }  
