@@ -3,21 +3,23 @@
     "data": {
       "url": "https://raw.githubusercontent.com/Megan6811/assignment2/main/humans.csv"
     },
-    "mark": "bar",
-    "encoding": {
-      "x": {"field": "State", "type": "nominal", "title": "State"},
-      "y": {"field": "value", "type": "quantitative", "title": "Count"},
-      "color": {
-        "field": "Type",
-        "type": "nominal",
-        "scale": {"range": ["red", "green"]},
-        "legend": {"title": "Category"}
+    "layer": [
+      {
+        "mark": "bar",
+        "encoding": {
+          "x": {"field": "State"},
+          "y": {"field": "Value", "type": "quantitative", "scale": {"domain": [0, 2500]}, "title": "Homes Lost"},
+          "color": {"value": "green"}
+        }
       },
-      "column": {
-        "field": "Type",
-        "title": "Category"
+      {
+        "mark": "bar",
+        "encoding": {
+          "x": {"field": "State"},
+          "y": {"field": "Value", "type": "quantitative", "scale": {"domain": [0, 500]}, "title": "Fatalities"},
+          "color": {"value": "red"}
+        }
       }
-    },
-    "title": "Fatalities and Homes Lost by State"
-  }
-  
+    ],
+    "title": "Grouped Bar Chart for Fatalities and Homes Lost by State"
+  }  

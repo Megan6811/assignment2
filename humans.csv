@@ -1,15 +1,8 @@
-State,Group,Value
-Northern Territory,Homes Lost,5
-New South Wales,Homes Lost,2448
-Queensland,Homes Lost,48
-Western Australia,Homes Lost,1
-Victoria,Homes Lost,396
-South Australia,Homes Lost,151
-Tasmania,Homes Lost,2
-Northern Territory,Fatalities,0
-New South Wales,Fatalities,26
-Queensland,Fatalities,0
-Western Australia,Fatalities,0
-Victoria,Fatalities,5
-South Australia,Fatalities,3
-Tasmania,Fatalities,0
+State,Homes Lost,Fatalities
+Northern Territory,5,0
+New South Wales,2448,26
+Queensland,48,0
+Western Australia,1,0
+Victoria,396,5
+South Australia,151,3
+Tasmania,2,0
