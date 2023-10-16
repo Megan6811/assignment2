@@ -14,7 +14,8 @@
     "legend": {
       "titleColor": "whitesmoke",
       "labelColor": "whitesmoke",
-      "labelFontSize": 15
+      "labelFontSize": 15,
+      "orient": "bottom" 
     }
   },
   "data": {
@@ -33,10 +34,5 @@
       {"field": "animal", "type": "nominal"},
       {"field": "deaths", "type": "quantitative"}
     ]
-  },
-  "title": {
-    "text": "Bushfire Effects on Animals:",
-    "fontSize": 50,
-    "color": "black"
   }
 }
