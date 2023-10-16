@@ -1,9 +1,16 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 400,
-  "height": 400,
+  "height": 500,
   "background": "black",
   "config": {
+    "axis": {
+      "labelColor": "whitesmoke",
+      "titleColor": "whitesmoke"
+    },
+    "view": {
+      "stroke": "transparent"
+    },
     "legend": {
       "titleColor": "whitesmoke",
       "labelColor": "whitesmoke",
