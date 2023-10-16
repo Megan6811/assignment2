@@ -5,11 +5,6 @@
     {
       "width": 600,
       "height": 400,
-      "title": {
-        "text": "Land Damage over Time",
-        "fontSize": 30,
-        "color": "whitesmoke"
-      },
       "data": {
         "url": "https://raw.githubusercontent.com/Megan6811/assignment2/main/annual-change-forest-area.csv",
         "format": { "type": "csv" }
@@ -27,12 +22,12 @@
         "x": {
           "field": "Year",
           "type": "temporal",
-          "axis": { "title": "Year", "labelColor": "whitesmoke", "titleColor": "whitesmoke" }
+          "axis": { "title": "Year", "labelColor": "whitesmoke", "titleColor": "whitesmoke", "titleFontSize": 15 }
         },
         "y": {
           "field": "value",
           "type": "quantitative",
-          "axis": { "title": "Land Area Lost (km^2)", "labelColor": "whitesmoke", "titleColor": "whitesmoke" }
+          "axis": { "title": "Land Area Lost (km^2)", "labelColor": "whitesmoke", "titleColor": "whitesmoke", "titleFontSize": 15 }
         },
         "color": {
           "field": "key",
@@ -56,11 +51,6 @@
     {
       "width": 400,
       "height": 400,
-      "title": {
-        "text": "Land Damage by State",
-        "fontSize": 30,
-        "color": "whitesmoke"
-      },
       "data": {
         "url": "https://raw.githubusercontent.com/Megan6811/assignment2/main/landDamage.csv",
         "format": { "type": "csv" }
@@ -72,13 +62,13 @@
             "x": {
               "field": "temp",
               "type": "quantitative",
-              "axis": { "title": "Temperature (°C)", "labelColor": "whitesmoke", "titleColor": "whitesmoke" },
+              "axis": { "title": "Temperature (°C)", "labelColor": "whitesmoke", "titleColor": "whitesmoke", "titleFontSize": 15 },
               "scale": { "domain": [0, 1.5] }
             },
             "y": {
               "field": "emissions",
               "type": "quantitative",
-              "axis": { "title": "Greenhouse Gas Emissions", "labelColor": "whitesmoke", "titleColor": "whitesmoke" },
+              "axis": { "title": "Greenhouse Gas Emissions", "labelColor": "whitesmoke", "titleColor": "whitesmoke", "titleFontSize": 15 },
               "scale": { "domain": [-20, 180] }
             },
             "size": {

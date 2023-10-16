@@ -4,7 +4,9 @@
   "config": {
     "axis": {
       "labelColor": "whitesmoke",
-      "titleColor": "whitesmoke"
+      "titleColor": "whitesmoke",
+      "labelFontSize": 15,
+      "titleFontSize": 15
     }
   },
   "data": {
