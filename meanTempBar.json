@@ -4,7 +4,8 @@
     "background": "black",
     "axis": {
       "labelColor": "whitesmoke",
-      "titleColor": "whitesmoke"
+      "titleColor": "whitesmoke",
+      "titleFontSize": 15
     }
   },
   "width": 1200,

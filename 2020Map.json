@@ -3,12 +3,6 @@
   "config": {
     "background": "black"
   },
-  "title": {
-    "text": "Measure of Fire Radiative Power in Australia",
-    "fontSize": 30,
-    "anchor": "middle",
-    "color": "whitesmoke"
-  },
   "hconcat": [
     {
       "title": {
@@ -64,9 +58,9 @@
     {
       "title": {
         "text": "2020",
-        "fontSize": 10,
+        "fontSize": 15,
         "anchor": "middle",
-        "offset": 10,
+        "offset": 15,
         "color": "whitesmoke"
       },
       "width": 610,
