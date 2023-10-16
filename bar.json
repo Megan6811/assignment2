@@ -2,10 +2,6 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "background": "black",
   "config": {
-    "title": {
-      "color": "whitesmoke",
-      "fontSize": 50
-    },
     "axis": {
       "labelColor": "whitesmoke",
       "titleColor": "whitesmoke"
@@ -18,7 +14,7 @@
     {
       "width": 300,
       "height": 400,
-      "mark": "bar",
+      "mark": {"type": "bar", "cornerRadiusEnd": 10},
       "encoding": {
         "x": {"field": "State", "title": null},
         "y": {
@@ -36,7 +32,7 @@
     {
       "width": 300,
       "height": 400,
-      "mark": "bar",
+      "mark": {"type": "bar", "cornerRadiusEnd": 10},
       "encoding": {
         "x": {"field": "State", "title": null},
         "y": {
@@ -51,9 +47,5 @@
         ]
       }
     }
-  ],
-  "title": {
-    "text": "Effects on Humans & Animals:",
-    "color": "whitesmoke"
-  }
+  ]
 }

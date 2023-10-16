@@ -1,70 +1,71 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {
-    "text": "Bushfire Effect on Land:",
-    "fontSize": 50,
-    "color": "whitesmoke"
-  },
   "background": "black",
   "hconcat": [
     {
-      "title": { "text": "Change in Forest Area Over Time", "color": "whitesmoke", "fontSize": 30 },
       "width": 600,
       "height": 400,
+      "title": {
+        "text": "Land Damage over Time",
+        "fontSize": 30,
+        "color": "whitesmoke"
+      },
       "data": {
         "url": "https://raw.githubusercontent.com/Megan6811/assignment2/main/annual-change-forest-area.csv",
         "format": { "type": "csv" }
+      },
+      "transform": [
+        { "calculate": "abs(datum.fires)", "as": "Fires" },
+        { "calculate": "abs(datum.other)", "as": "Other" },
+        { "fold": ["Fires", "Other"] }
+      ],
+      "mark": {
+        "type": "area",
+        "opacity": 0.7
       },
       "encoding": {
         "x": {
           "field": "Year",
           "type": "temporal",
           "axis": { "title": "Year", "labelColor": "whitesmoke", "titleColor": "whitesmoke" }
-        }
-      },
-      "transform": [
-        { "calculate": "abs(datum.fires)", "as": "fires_abs" },
-        { "calculate": "abs(datum.other)", "as": "other_abs" }
-      ],
-      "layer": [
-        {
-          "mark": "area",
-          "encoding": {
-            "y": {
-              "field": "fires_abs",
-              "type": "quantitative",
-              "stack": "zero",
-              "axis": { "title": "Land Area Lost (km^2)", "labelColor": "whitesmoke", "titleColor": "whitesmoke" }
-            },
-            "color": { "value": "chocolate" },
-            "tooltip": [
-              { "field": "fires_abs", "title": "Fire Land Damage (km^2)" },
-              { "field": "other_abs", "title": "Other Land Damage (km^2)" }
-            ]
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative",
+          "axis": { "title": "Land Area Lost (km^2)", "labelColor": "whitesmoke", "titleColor": "whitesmoke" }
+        },
+        "color": {
+          "field": "key",
+          "type": "nominal",
+          "scale": {
+            "domain": ["Fires", "Other"],
+            "range": ["chocolate", "olive"]
+          },
+          "legend": {
+            "title": "Cause of Damage",
+            "titleColor": "whitesmoke",
+            "labelColor": "whitesmoke"
           }
         },
-        {
-          "mark": "area",
-          "encoding": {
-            "y": {
-              "field": "other_abs",
-              "type": "quantitative",
-              "stack": "zero"
-            },
-            "color": { "value": "olive" }
-          }
-        }
-      ]
+        "tooltip": [
+          {"field": "key", "title": "Cause"},
+          {"field": "value", "title": "Land Area Lost (km^2)"}
+        ]
+      }
     },
     {
-      "title": { "text": "Correlation between Climate and Bushfire Damage", "color": "whitesmoke", "fontSize": 30 },
       "width": 400,
       "height": 400,
+      "title": {
+        "text": "Land Damage by State",
+        "fontSize": 30,
+        "color": "whitesmoke"
+      },
       "data": {
         "url": "https://raw.githubusercontent.com/Megan6811/assignment2/main/landDamage.csv",
         "format": { "type": "csv" }
       },
-      "layer": [
+      "layer": [ 
         {
           "mark": "circle",
           "encoding": {
@@ -72,7 +73,7 @@
               "field": "temp",
               "type": "quantitative",
               "axis": { "title": "Temperature (°C)", "labelColor": "whitesmoke", "titleColor": "whitesmoke" },
-              "scale": {"domain": [0, 1.5]}
+              "scale": { "domain": [0, 1.5] }
             },
             "y": {
               "field": "emissions",
@@ -83,7 +84,7 @@
             "size": {
               "field": "land damage",
               "type": "quantitative",
-              "scale": { "range": [500, 6000] },
+              "scale": { "range": [100, 6000] },
               "title": "Land Damage"
             },
             "color": {
@@ -104,24 +105,13 @@
         {
           "mark": {
             "type": "text",
-            "align": "center",
-            "baseline": "middle"
+            "color": "white",
+            "fontSize": 12
           },
           "encoding": {
-            "x": {
-              "field": "temp",
-              "type": "quantitative"
-            },
-            "y": {
-              "field": "emissions",
-              "type": "quantitative"
-            },
-            "text": {
-              "field": "state"
-            },
-            "color": {
-              "value": "whitesmoke"
-            }
+            "x": { "field": "temp", "type": "quantitative" },
+            "y": { "field": "emissions", "type": "quantitative" },
+            "text": { "field": "state", "type": "nominal" }
           }
         }
       ]
