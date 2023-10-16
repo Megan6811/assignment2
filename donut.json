@@ -4,9 +4,6 @@
   "height": 400,
   "background": "black",
   "config": {
-    "title": {
-      "color": "whitesmoke"
-    },
     "axis": {
       "labelColor": "whitesmoke",
       "titleColor": "whitesmoke"
