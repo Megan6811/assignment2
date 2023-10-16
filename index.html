@@ -105,7 +105,20 @@
     <!-- end pure grid group -->
     <!-- Placeholder for "topGraph" visualization -->
     <div style="text-align:center">
+      <div style="max-width: 80%; margin: 0 auto; text-align: center;">
+        <h1 style="font-size: 30px;">Relationship Between Temperature and CO2 Emissions in Australia</h1>
+      </div>
+    </div>
+    <div style="text-align:center">
       <div id="topGraph" class="vis-container"></div>
+    </div>
+    <div style="text-align:center; margin-bottom: 20px;">
+      <label for="dataDisplay" style="margin-right: 10px;">Display Data:</label>
+      <select id="dataDisplay">
+        <option value="both">Both</option>
+        <option value="meanTemp">Mean Temperature Anomaly</option>
+        <option value="emissions">Emissions</option>
+      </select>
     </div>
     <div style="text-align:center">
       <div style="max-width: 80%; margin: 0 auto; text-align: center;">
@@ -128,7 +141,7 @@
         <div id="bubblePlot" class="vis-container"></div>
       </div>
     </div>
-    <!-- ttext discussing 4 bottom graphs -->
+    <!-- text discussing 4 bottom graphs -->
     <div style="text-align:center">
       <div style="max-width: 80%; margin: 0 auto; text-align: center;">
         <p>The bushfires that ravaged Australia in recent years have had a profound and alarming impact on the country's land, resulting in a drastic increase in land damage and deforestation. A notable illustration of this relationship can be observed in a bubble plot, which demonstrates a strong correlation between the amount of CO2 emissions produced by Australian states and the extent of land damaged by bushfires. This data visualization underscores the critical role that carbon emissions play in exacerbating the frequency and severity of wildfires, making it imperative to address climate change and reduce greenhouse gas emissions to mitigate future environmental catastrophes. </p>
@@ -142,18 +155,46 @@
   </div>
 
   <script type="text/javascript">
+    // URLs for your visualizations
     var specVis2 = "https://raw.githubusercontent.com/Megan6811/assignment2/main/2020Map.json";
     var specVis3 = "https://raw.githubusercontent.com/Megan6811/assignment2/main/meanTempBar.json";
+    var topGraphURL = "https://raw.githubusercontent.com/Megan6811/assignment2/main/meanTempBar.json";
+    
+    var initialSpec; // To store the initial specification of topGraph
 
-    // Embed "topGraph" visualization - Replace with the correct URL and specification
-    vegaEmbed('#topGraph', "https://raw.githubusercontent.com/Megan6811/assignment2/main/meanTempBar.json", { "actions": false });
+    // Embed "topGraph" visualization
+    fetch(topGraphURL).then(response => response.json())
+      .then(data => {
+        initialSpec = data; // Save the initial specification
+        vegaEmbed('#topGraph', initialSpec, { "actions": false });
+      });
 
     // Embed other visualizations
     vegaEmbed('#vis2', specVis2, { "actions": false });
     vegaEmbed('#bubblePlot', "https://raw.githubusercontent.com/Megan6811/assignment2/main/bubblePlot.json", { "actions": false });
     vegaEmbed('#bar', "https://raw.githubusercontent.com/Megan6811/assignment2/main/bar.json", { "actions": false });
     vegaEmbed('#pie', "https://raw.githubusercontent.com/Megan6811/assignment2/main/donut.json", { "actions": false });
+
+    // Dropdown change event listener
+    document.getElementById("dataDisplay").addEventListener("change", function (e) {
+      redrawGraph(e.target.value);
+    });
+
+    function redrawGraph(displayType) {
+      let specToUse;
+
+      if (displayType === "both") {
+        specToUse = initialSpec;
+      } else if (displayType === "meanTemp") {
+        specToUse = JSON.parse(JSON.stringify(initialSpec)); // Clone the initial specification
+        specToUse.layer.splice(1, 1); // Remove the emissions line layer
+      } else if (displayType === "emissions") {
+        specToUse = JSON.parse(JSON.stringify(initialSpec)); // Clone the initial specification
+        specToUse.layer.splice(0, 1); // Remove the bar layer
+      }
+      
+      vegaEmbed('#topGraph', specToUse, { "actions": false });
+    }
   </script>
 </body>
-
 </html>
