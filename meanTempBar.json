@@ -7,13 +7,6 @@
       "titleColor": "whitesmoke"
     }
   },
-  "title": {
-    "text": "Relationship Between Temperature and CO2 Emissions in Australia",
-    "fontSize": 30,
-    "anchor": "middle",
-    "offset": 10,
-    "color": "whitesmoke"
-  },
   "width": 1200,
   "height": 400,
   "data": {
@@ -28,7 +21,6 @@
           "field": "year",
           "type": "ordinal",
           "title": "Year",
-          "sort": "x",
           "axis": {
             "labelFlush": true,
             "labelPadding": 10,
@@ -42,11 +34,11 @@
           "title": "Mean Temperature Anomaly"
         },
         "color": {
-          "field": "year",
+          "field": "mean temp deviation",
           "type": "quantitative",
           "scale": {
             "type": "linear",
-            "range": ["yellow", "red"]
+            "range": ["yellow", "darkred"]
           },
           "legend": null
         },
@@ -65,6 +57,8 @@
           "type": "ordinal",
           "title": "Year",
           "axis": {
+            "labelFlush": true,
+            "labelPadding": 10,
             "labelColor": "whitesmoke",
             "tickColor": "whitesmoke"
           }
@@ -89,4 +83,3 @@
     }
   }
 }
-
