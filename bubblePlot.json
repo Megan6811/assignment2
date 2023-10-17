@@ -3,7 +3,7 @@
   "background": "black",
   "hconcat": [
     {
-      "width": 600,
+      "width": 500,
       "height": 400,
       "data": {
         "url": "https://raw.githubusercontent.com/Megan6811/assignment2/main/annual-change-forest-area.csv",
