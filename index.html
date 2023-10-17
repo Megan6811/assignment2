@@ -3,22 +3,22 @@
 
 <head>
   <title>Assignment2</title>
-  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <!-- importing Vega & Vega-Lite -->
   <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
 
-  <!-- Import pure.css -->
+  <!-- importing pure.css -->
   <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
     integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <!-- Google font -->
+  <!-- google fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 
-  <!-- CSS file -->
+  <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
 
   <style>
@@ -86,8 +86,7 @@
 
 <body>
   <div class="page">
-    <!-- Your content here -->
-    <!-- pure grid group -->
+    <!-- title and first paragraph -->
     <div style="text-align:center">
       <div style="max-width: 80%; margin: 0 auto; text-align: center;">
         <h1 style="font-size: 75px;">EFFECTS OF CARBON EMISSIONS ON THE AUSTRALIAN CLIMATE</h1>
@@ -102,16 +101,17 @@
         </p>
       </div>
     </div>
-    <!-- end pure grid group -->
-    <!-- Placeholder for "topGraph" visualization -->
+    <!-- title 1 -->
     <div style="text-align:center">
       <div style="max-width: 80%; margin: 0 auto; text-align: center;">
         <h1 style="font-size: 30px;">Relationship Between Temperature and CO2 Emissions in Australia</h1>
       </div>
     </div>
+    <!-- bar and line chart -->
     <div style="text-align:center">
       <div id="topGraph" class="vis-container"></div>
     </div>
+    <!-- drop down menu -->
     <div style="text-align:center; margin-bottom: 20px;">
       <label for="dataDisplay" style="margin-right: 10px;">Display Data:</label>
       <select id="dataDisplay">
@@ -120,16 +120,19 @@
         <option value="emissions">Emissions</option>
       </select>
     </div>
+    <!-- paragraph 2 -->
     <div style="text-align:center">
       <div style="max-width: 80%; margin: 0 auto; text-align: center;">
         <p> Over the past century, there has been a strong correlation in Australia between the increase in carbon emissions and rising temperatures. Elevated levels of carbon emissions, largely from human activities, have contributed to more frequent and severe heatwaves, extended droughts, and devastating bushfires, making it clear that carbon emissions are a primary driver of temperature increases in the country.</p>
       </div>
     </div>
+    <!-- map title -->
     <div style="text-align:center">
       <div style="max-width: 80%; margin: 0 auto; text-align: center;">
         <h1 style="font-size: 30px;">Measure of Fire Radiative Power in Australia</h1>
       </div>
     </div>
+    <!-- maps -->
     <div>
       <div style="text-align:center">
         <div id="vis2" class="vis-container"></div>
@@ -140,6 +143,7 @@
       <img src="https://natureconservancy-h.assetsadobe.com/is/image/content/dam/tnc/nature/en/photos/australia/Bushfire-2_Sebastian-Kappen.jpg?crop=0%2C285%2C4896%2C2692&wid=4000&hei=2200&scl=1.224"
         alt="Wildfire Image" style="max-width: 100%; height: auto;">
     </div>
+    <!-- land title -->
     <div style="text-align:center">
       <div style="max-width: 80%; margin: 0 auto; text-align: center;">
         <h1 style="font-size: 30px;">Bushfire Effect on Land</h1>
@@ -157,11 +161,13 @@
         <p>The bushfires that ravaged Australia in recent years have had a profound and alarming impact on the country's land, resulting in a drastic increase in land damage and deforestation. A notable illustration of this relationship can be observed in a bubble plot, which demonstrates a strong correlation between the amount of CO2 emissions produced by Australian states and the extent of land damaged by bushfires. This data visualization underscores the critical role that carbon emissions play in exacerbating the frequency and severity of wildfires, making it imperative to address climate change and reduce greenhouse gas emissions to mitigate future environmental catastrophes. </p>
       </div>
     </div>
+    <!-- title humans, animals -->
     <div style="text-align:center">
       <div style="max-width: 80%; margin: 0 auto; text-align: center;">
         <h1 style="font-size: 30px;">Bushfire Effect Humans and Animals in 2020</h1>
       </div>
     </div>
+    <!-- bar pie -->
     <div>
       <div style="text-align:center">
         <div id="bar" class="vis-container"></div>
@@ -170,7 +176,7 @@
   </div>
 
   <script type="text/javascript">
-    // URLs for your visualizations
+    // URLs
     var specVis2 = "https://raw.githubusercontent.com/Megan6811/assignment2/main/2020Map.json";
     var specVis3 = "https://raw.githubusercontent.com/Megan6811/assignment2/main/meanTempBar.json";
     var topGraphURL = "https://raw.githubusercontent.com/Megan6811/assignment2/main/meanTempBar.json";
@@ -184,13 +190,13 @@
         vegaEmbed('#topGraph', initialSpec, { "actions": false });
       });
 
-    // Embed other visualizations
+    // Embeding some vis
     vegaEmbed('#vis2', specVis2, { "actions": false });
     vegaEmbed('#bubblePlot', "https://raw.githubusercontent.com/Megan6811/assignment2/main/bubblePlot.json", { "actions": false });
     vegaEmbed('#bar', "https://raw.githubusercontent.com/Megan6811/assignment2/main/bar.json", { "actions": false });
     vegaEmbed('#pie', "https://raw.githubusercontent.com/Megan6811/assignment2/main/donut.json", { "actions": false });
 
-    // Dropdown change event listener
+    // Dropdown JS code
     document.getElementById("dataDisplay").addEventListener("change", function (e) {
       redrawGraph(e.target.value);
     });
@@ -201,11 +207,11 @@
       if (displayType === "both") {
         specToUse = initialSpec;
       } else if (displayType === "meanTemp") {
-        specToUse = JSON.parse(JSON.stringify(initialSpec)); // Clone the initial specification
-        specToUse.layer.splice(1, 1); // Remove the emissions line layer
+        specToUse = JSON.parse(JSON.stringify(initialSpec)); // initial specification
+        specToUse.layer.splice(1, 1); // remove ine layer
       } else if (displayType === "emissions") {
-        specToUse = JSON.parse(JSON.stringify(initialSpec)); // Clone the initial specification
-        specToUse.layer.splice(0, 1); // Remove the bar layer
+        specToUse = JSON.parse(JSON.stringify(initialSpec)); // initial specification
+        specToUse.layer.splice(0, 1); // remove bar layer
       }
       
       vegaEmbed('#topGraph', specToUse, { "actions": false });
