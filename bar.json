@@ -7,13 +7,22 @@
       "titleColor": "whitesmoke",
       "labelFontSize": 15,
       "titleFontSize": 15
+    },
+    "view": {
+      "stroke": "transparent"
+    },
+    "legend": {
+      "titleColor": "whitesmoke",
+      "labelColor": "whitesmoke",
+      "labelFontSize": 15,
+      "orient": "right" 
     }
-  },
-  "data": {
-    "url": "https://raw.githubusercontent.com/Megan6811/assignment2/main/humans.csv"
   },
   "hconcat": [
     {
+      "data": {
+        "url": "https://raw.githubusercontent.com/Megan6811/assignment2/main/humans.csv"
+      },
       "width": 300,
       "height": 400,
       "mark": {"type": "bar", "cornerRadiusEnd": 10},
@@ -32,6 +41,9 @@
       }
     },
     {
+      "data": {
+        "url": "https://raw.githubusercontent.com/Megan6811/assignment2/main/humans.csv"
+      },
       "width": 300,
       "height": 400,
       "mark": {"type": "bar", "cornerRadiusEnd": 10},
@@ -46,6 +58,30 @@
         "tooltip": [
           {"field": "State", "type": "ordinal", "title": "State"},
           {"field": "Fatalities", "type": "quantitative", "title": "Fatalities"}
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/Megan6811/assignment2/main/animals.csv"
+      },
+      "width": 400,
+      "height": 400,
+      "mark": "arc",
+      "encoding": {
+        "theta": {"field": "deaths", "type": "quantitative"},
+        "color": {
+          "title": "Animal:",
+          "field": "animal",
+          "type": "nominal",
+          "scale": {"range": ["darkred", "chocolate", "goldenrod", "olive"]},
+          "legend": {
+            "labelFontSize": 15
+          }
+        },
+        "tooltip": [
+          {"field": "animal", "type": "nominal"},
+          {"field": "deaths", "type": "quantitative"}
         ]
       }
     }
